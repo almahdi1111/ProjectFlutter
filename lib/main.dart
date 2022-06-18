@@ -68,41 +68,44 @@ class QuizPageState extends State<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Quiz App"),
-        actions: [
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Quiz App"),
+          backgroundColor: Colors.blueGrey[900],
+          actions: [
 
-          IconButton(onPressed: ()=>startAddNewQuestion(context),
-              icon:Icon(Icons.add)
-          )
+            IconButton(onPressed: ()=>startAddNewQuestion(context),
+                icon:Icon(Icons.add)
+            )
+          ],
+
+
+
+        ),
+        backgroundColor: Color(0xFF333333),
+        body:SingleChildScrollView(
+        child:Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+        children: [
+
+
+
+
+
+
+          Play(questionsList),
+
         ],
 
-
-
       ),
-      backgroundColor: Color(0xFF333333),
-      body:SingleChildScrollView(
-      child:Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-      children: [
-
-
-
-
-
-
-        Play(questionsList),
-
-      ],
-
-    ),
-    ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){},
+      ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: (){},
+        ),
       ),
     );
   }
